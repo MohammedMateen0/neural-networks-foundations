@@ -25,3 +25,36 @@ ReLU:
 {relu(X)}
 Leaky ReLU:
 {leaky_relu(X)}''')
+
+x = torch.tensor(
+    2.0,
+    requires_grad=True
+)
+
+y = torch.sigmoid(x)
+
+y.backward()
+
+print(x.grad)
+
+x = torch.tensor(
+    2.0,
+    requires_grad=True
+)
+
+y = torch.relu(x)
+
+y.backward()
+
+print(x.grad)
+
+x = torch.tensor(
+    -2.0,
+    requires_grad=True
+)
+
+y = torch.relu(x)
+
+y.backward()
+
+print(x.grad)
